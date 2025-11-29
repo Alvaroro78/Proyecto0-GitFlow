@@ -11,7 +11,9 @@ public class Student {
     //Methods
 
     public Student(String name, int age, double grade) {
-
+        this.name = name;
+        this.age = age;
+        this.grade = grade;
     }
 
 

@@ -9,8 +9,19 @@ public class Class {
     private ArrayList<Student> students;
 
     //Methods
-    public void addStudent(){
+    public Class(){
 
+    }
+
+    /*
+     */
+
+    public void addStudent(String name,int age, double grade){
+        try {
+            students.add(new Student(name, age, grade));
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     public ArrayList<String> getStudentsInfo(){
