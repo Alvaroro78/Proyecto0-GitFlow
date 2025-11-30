@@ -47,6 +47,8 @@ public class ClassManager {
         System.out.println(class1.getStudentInfo(option));
     }
 
+
+
     public static void main(String[] args){
         ClassManager cm = new ClassManager();
         boolean x=false;
