@@ -13,20 +13,11 @@ public class Class {
         students = new ArrayList<>();
     }
 
-
-    public void addStudent(){
-
-    }
-
     /*
      */
 
     public void addStudent(String name,int age, double grade){
-        try {
-            students.add(new Student(name, age, grade));
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
+        students.add(new Student(name, age, grade));
     }
 
     public ArrayList<String> getStudentsInfo(){
@@ -37,8 +28,12 @@ public class Class {
         return studentsInfo;
     }
 
-    public String getStudentInfo(int index){
-        return students.get(index).getName() + " " +  students.get(index).getAge() + " " + students.get(index).getGrade();
+    public String getStudentInfo(int index) throws Exception{
+        try {
+            return students.get(index).getName() + " " + students.get(index).getAge() + " " + students.get(index).getGrade();
+        } catch (IndexOutOfBoundsException e) {
+            throw new Exception();
+        }
     }
 
     public double getClassAverage(){
@@ -48,6 +43,4 @@ public class Class {
         }
         return prom/students.size();
     }
-
-
 }
