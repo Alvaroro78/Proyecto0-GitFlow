@@ -1,6 +1,8 @@
 package com.icesi.tallerestudiantes0.ui;
 
 import com.icesi.tallerestudiantes0.model.Class;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ClassManager {
@@ -33,6 +35,20 @@ public class ClassManager {
     }
 
 
+    public void showStudents(){
+        System.out.println("======ESTUDIANTES======");
+        ArrayList<String> info = class1.getStudentsInfo();
+        for (int i=0;i<info.size();i++){
+            System.out.println(i + ". " + info.get(i));
+        }
+        System.out.printf("Seleccione el indice del estudiante que desea consultar: ");
+        int option = sc.nextInt();
+        sc.nextLine();
+        System.out.println(class1.getStudentInfo(option));
+    }
+
+
+
     public static void main(String[] args){
         ClassManager cm = new ClassManager();
         boolean x=false;
@@ -42,7 +58,7 @@ public class ClassManager {
                     cm.addStudent();
                     break;
                 case 2:
-                    //cm.showStudents();
+                    cm.showStudents();
                     break;
                 case 3:
                     //cm.getProm();
