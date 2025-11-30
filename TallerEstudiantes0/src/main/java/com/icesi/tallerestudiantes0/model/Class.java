@@ -10,6 +10,11 @@ public class Class {
 
     //Methods
     public Class(){
+        students = new ArrayList<>();
+    }
+
+
+    public void addStudent(){
 
     }
 
@@ -37,7 +42,11 @@ public class Class {
     }
 
     public double getClassAverage(){
-        return 0;
+        double prom = 0;
+        for (Student student : students){
+            prom += student.getGrade();
+        }
+        return prom/students.size();
     }
 
 
