@@ -25,7 +25,15 @@ public class Class {
     }
 
     public ArrayList<String> getStudentsInfo(){
-        return null;
+        ArrayList<String> studentsInfo = new ArrayList<>();
+        for (Student student : students){
+            studentsInfo.add(student.toString());
+        }
+        return studentsInfo;
+    }
+
+    public String getStudentInfo(int index){
+        return students.get(index).getName() + " " +  students.get(index).getAge() + " " + students.get(index).getGrade();
     }
 
     public double getClassAverage(){
