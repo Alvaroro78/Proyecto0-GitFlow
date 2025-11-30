@@ -18,8 +18,27 @@ public class Class {
 
     }
 
+    /*
+     */
+
+    public void addStudent(String name,int age, double grade){
+        try {
+            students.add(new Student(name, age, grade));
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
     public ArrayList<String> getStudentsInfo(){
-        return null;
+        ArrayList<String> studentsInfo = new ArrayList<>();
+        for (Student student : students){
+            studentsInfo.add(student.toString());
+        }
+        return studentsInfo;
+    }
+
+    public String getStudentInfo(int index){
+        return students.get(index).getName() + " " +  students.get(index).getAge() + " " + students.get(index).getGrade();
     }
 
     public double getClassAverage(){
